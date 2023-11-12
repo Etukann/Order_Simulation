@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="#" method="POST" onsubmit="return false;">
+            <input type="text" id="username" name="username" placeholder="Username" required><br>
+            <input type="password" id="password" name password placeholder="Password" required><br>
+            <button type="submit" class="button" onclick="login()">Login</button>
+        </form>
+        <div class="button-container">
+            <!-- Link to the registration page (register.html) -->
+            <a href="register.html" class="button register">Register</a>
+            <a href="forgot-password.html" class="button forgot-password">Forgot Password</a>
+        </div>
+    </div>
+
+    <div id="message-container" style="display: none;">
+        <p id="login-message">You are now logged in.</p>
+    </div>
+    <p id="error-message" style="display: none; color: red; text-align: center;"></p>
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorMessage = document.getElementById("error-message");
+
+            if (username === "username123" && password === "password123") {
+                window.location.href = "welcome.html";
+            } else {
+                errorMessage.style.display = "block";
+                errorMessage.textContent = "Incorrect username or password. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>

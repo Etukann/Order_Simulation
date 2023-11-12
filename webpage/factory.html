@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Buttons</title>
+  <style type="text/css">
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h1 {
+      color: #333;
+      margin-right: auto;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .table-container {
+      text-align: left;
+      margin-right: 20px;
+    }
+
+    table {
+      border: 2px solid #3498db;
+      border-collapse: collapse;
+      width: 300px;
+      font-size: 18px;
+      margin: 0 auto;
+    }
+
+    table caption {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    th, td {
+      border: 1px solid #3498db;
+      padding: 15px;
+    }
+
+    th {
+      background-color: #3498db;
+      color: #fff;
+    }
+
+    td:first-child {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="table-container">
+    <table>
+      <caption>Available Materials</caption>
+      <tr>
+        <th>Material</th>
+        <th>Availability</th>
+      </tr>
+      <tr>
+        <td>Pots</td>
+        <td id="randomPots"></td>
+      </tr>
+      <tr>
+        <td>Pans</td>
+        <td id="randomPans"></td>
+      </tr>
+      <tr>
+        <td>Handles</td>
+        <td id="randomHandles"></td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="text-align: center; flex: 1;">
+    <h1>Select an Item:</h1>
+
+    <button onclick="goToPage()">Pots</button>
+    <button onclick="goToPage()">Pans</button>
+    <button onclick="goToPage()">Handles</button>
+  </div>
+
+  <script>
+    function generateRandomNumber() {
+      return Math.floor(Math.random() * 100);
+    }
+
+    document.getElementById('randomPots').innerText = generateRandomNumber();
+    document.getElementById('randomPans').innerText = generateRandomNumber();
+    document.getElementById('randomHandles').innerText = generateRandomNumber();
+
+    function goToPage() {
+      window.location.href = 'materials.html';
+    }
+  </script>
+
+</body>
+</html>

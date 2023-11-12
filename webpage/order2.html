@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order2 Page</title>
+    <link rel="stylesheet" type="text/css" href="styles3.css">
+</head>
+
+<body>
+    <div id="order-form">
+        <h2>Order Page</h2>
+        <form id="form">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="factory">Select a factory:</label>
+            <select id="factory" name="factory">
+                <option value="factory1">Factory 1</option>
+                <option value="factory2">Factory 2</option>
+                <option value="factory3">Factory 3</option>
+                <option value="factory4">Factory 4</option>
+            </select>
+
+            <button type="button" id="submit-btn" onclick="placeOrder()">Place Order</button>
+        </form>
+        <div id="order-message">
+        </div>
+    </div>
+
+    <script>
+        function placeOrder() {
+            var quantity = document.getElementById("quantity").value;
+            var factory = document.getElementById("factory").value;
+            var orderNumber = generateOrderNumber();
+
+            var message = "Order Placed for Stainless Steel!\nOrder Number: " + orderNumber + "\nQuantity: " + quantity;
+            document.getElementById("order-message").innerText = message;
+            document.getElementById("order-message").style.display = "block";
+        }
+
+        function generateOrderNumber() {
+            return Math.floor(Math.random() * 1000000) + 1;
+        }
+    </script>
+</body>
+
+</html>
